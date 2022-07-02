@@ -33,7 +33,4 @@
         <maven.compiler.target>${target.java.version}</maven.compiler.target>
     </properties>
 
-
-
-    
 </project>
