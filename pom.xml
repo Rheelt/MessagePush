@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>message-push-common</module>
+        <module>message-push-handler</module>
+        <module>message-push-support</module>
     </modules>
     <name>message-push</name>
     <description>message-push</description>
