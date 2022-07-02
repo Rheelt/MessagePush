@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class MessagePushApplication {
 
+
     @RequestMapping("/home")
     String home() {
         return "Hello World!";
