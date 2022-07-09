@@ -1,4 +1,4 @@
-package com.rhee.message.script;
+package com.rhee.messagepush.script;
 
 import cn.hutool.core.util.IdUtil;
 import com.google.common.base.Throwables;
@@ -42,7 +42,7 @@ public class TencentSmsScript {
     public String send(SmsParam smsParam) {
         try {
 
-            /**
+            /*
              * 初始化 client
              */
             Credential cred = new Credential(SECRET_ID, SECRET_KEY);
@@ -52,7 +52,7 @@ public class TencentSmsScript {
             clientProfile.setHttpProfile(httpProfile);
             SmsClient client = new SmsClient(cred, REGION, clientProfile);
 
-            /**
+            /*
              * 组装发送短信参数
              */
             SendSmsRequest req = new SendSmsRequest();
@@ -65,7 +65,7 @@ public class TencentSmsScript {
             req.setTemplateParamSet(templateParamSet1);
             req.setSessionContext(IdUtil.fastSimpleUUID());
 
-            /**
+            /*
              * 请求，返回结果
              */
             SendSmsResponse resp = client.SendSms(req);

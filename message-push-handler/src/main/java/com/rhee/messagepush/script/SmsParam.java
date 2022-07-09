@@ -1,4 +1,4 @@
-package com.rhee.message.script;
+package com.rhee.messagepush.script;
 
 import lombok.Builder;
 import lombok.Data;

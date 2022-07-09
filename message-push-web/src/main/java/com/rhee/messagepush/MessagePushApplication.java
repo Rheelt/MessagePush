@@ -1,8 +1,12 @@
-import com.rhee.message.script.SmsParam;
-import com.rhee.message.script.TencentSmsScript;
+package com.rhee.messagepush;
+
+import com.rhee.messagepush.script.SmsParam;
+import com.rhee.messagepush.script.TencentSmsScript;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +17,8 @@ import java.util.List;
  * @author rhee
  * @date 2022/7/2 10:10 PM
  */
+@SpringBootApplication
 @RestController
-@EnableAutoConfiguration
 public class MessagePushApplication {
 
     @Autowired
