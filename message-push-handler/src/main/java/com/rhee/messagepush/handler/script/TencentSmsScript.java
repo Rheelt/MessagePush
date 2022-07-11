@@ -1,4 +1,4 @@
-package com.rhee.messagepush.script;
+package com.rhee.messagepush.handler.script;
 
 import cn.hutool.core.util.IdUtil;
 import com.google.common.base.Throwables;

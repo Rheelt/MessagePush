@@ -1,7 +1,7 @@
 package com.rhee.messagepush;
 
-import com.rhee.messagepush.script.SmsParam;
-import com.rhee.messagepush.script.TencentSmsScript;
+import com.rhee.messagepush.handler.script.SmsParam;
+import com.rhee.messagepush.handler.script.TencentSmsScript;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
