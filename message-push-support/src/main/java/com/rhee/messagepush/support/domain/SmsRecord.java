@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * @author rhee
@@ -22,7 +23,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class SmsRecord {
+public class SmsRecord implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -47,6 +48,11 @@ public class SmsRecord {
      * 渠道商名字
      */
     private String supplierName;
+
+    /**
+     * 短信发送的内容
+     */
+    private String msgContent;
 
     /**
      * 批次号Id

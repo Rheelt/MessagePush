@@ -35,6 +35,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--mysql驱动包-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.29</version>
+            </dependency>
+
             <!--hutool工具包-->
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -62,6 +69,7 @@
                 <artifactId>fastjson</artifactId>
                 <version>1.2.78</version>
             </dependency>
+
             <!--腾讯sdk(目前用在短信上)-->
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>

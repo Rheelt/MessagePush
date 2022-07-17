@@ -1,13 +1,17 @@
 package com.rhee.messagepush.support.domain;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
+
 /**
  * @author rhee
  * @date 2022/7/11 10:56 PM
@@ -18,7 +22,8 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class MessageTemplate {
+@Accessors(chain = true)
+public class MessageTemplate implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -45,6 +50,16 @@ public class MessageTemplate {
     private Integer msgStatus;
 
     /**
+     * 定时任务Id(由xxl-job返回)
+     */
+    private Integer cronTaskId;
+
+    /**
+     * 定时发送的人群的文件路径
+     */
+    private String cronCrowdPath;
+
+    /**
      * 发送的Id类型
      */
     private Integer idType;
@@ -58,6 +73,11 @@ public class MessageTemplate {
      * 模板类型
      */
     private Integer templateType;
+
+    /**
+     * 屏蔽类型
+     */
+    private Integer shieldType;
 
     /**
      * 消息类型
@@ -108,8 +128,8 @@ public class MessageTemplate {
 
     /**
      * 是否删除
-     * 0：已删除
-     * 1：删除
+     * 0：未删除
+     * 1：已删除
      */
     private Integer isDeleted;
 
@@ -123,16 +143,5 @@ public class MessageTemplate {
      */
     private Integer updated;
 
-    /**
-     * 消息去重时间 单位小时
-     */
-    private Integer deduplicationTime;
-
-    /**
-     * 是否夜间屏蔽
-     * 0:不屏蔽
-     * 1：屏蔽
-     */
-    private Integer isNightShield;
 
 }
