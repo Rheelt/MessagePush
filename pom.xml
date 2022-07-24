@@ -10,6 +10,8 @@
         <module>message-push-handler</module>
         <module>message-push-support</module>
         <module>message-push-web</module>
+        <module>message-push-service-api</module>
+        <module>message-push-service-api-impl</module>
     </modules>
 
     <groupId>com.rhee.messagepush</groupId>
