@@ -1,4 +1,4 @@
-package com.rhee.messagepush.service.api.impl.pipeline;
+package com.rhee.messagepush.support.pipeline;
 
 /**
  * @author rhee
@@ -9,7 +9,8 @@ package com.rhee.messagepush.service.api.impl.pipeline;
 public interface BusinessProcess {
 
     /**
-     * 业务处理
-     * */
+     * 真正处理逻辑
+     * @param context
+     */
     void process(ProcessContext context);
 }

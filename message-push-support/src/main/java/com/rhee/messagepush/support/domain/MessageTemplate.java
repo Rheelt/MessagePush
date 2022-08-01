@@ -23,6 +23,11 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @Accessors(chain = true)
+/**
+ *
+ * 消息模板DO
+ * @author 3y
+ */
 public class MessageTemplate implements Serializable {
 
     @Id
@@ -142,6 +147,18 @@ public class MessageTemplate implements Serializable {
      * 更新时间 单位s
      */
     private Integer updated;
+
+    /**
+     * 消息去重时间 单位小时
+     */
+    private Integer deduplicationTime;
+
+    /**
+     * 是否夜间屏蔽
+     * 0:不屏蔽
+     * 1：屏蔽
+     */
+    private Integer isNightShield;
 
 
 }

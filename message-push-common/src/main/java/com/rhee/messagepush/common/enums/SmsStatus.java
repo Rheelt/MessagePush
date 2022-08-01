@@ -1,10 +1,17 @@
 package com.rhee.messagepush.common.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.ToString;
+
 /**
  * @author rhee
  * @date 2022/7/11 10:34 PM
  * sms状态信息
  */
+@Getter
+@ToString
+@AllArgsConstructor
 public enum SmsStatus {
     //
     SEND_SUCCESS(10,"调用渠道接口发送成功"),
@@ -14,24 +21,4 @@ public enum SmsStatus {
     private Integer code;
     private String description;
 
-    SmsStatus(Integer code, String description) {
-        this.code = code;
-        this.description = description;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

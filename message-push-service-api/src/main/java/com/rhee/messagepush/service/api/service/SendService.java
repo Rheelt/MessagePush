@@ -1,5 +1,6 @@
 package com.rhee.messagepush.service.api.service;
 
+import com.rhee.messagepush.service.api.domain.BatchSendRequest;
 import com.rhee.messagepush.service.api.domain.SendRequest;
 import com.rhee.messagepush.service.api.domain.SendResponse;
 
@@ -11,9 +12,21 @@ import com.rhee.messagepush.service.api.domain.SendResponse;
 public interface SendService {
 
 
+
+    /**
+     * 单文案发送接口
+     * @param sendRequest
+     * @return
+     */
     SendResponse send(SendRequest sendRequest);
 
 
-    SendResponse batchSend(SendRequest sendRequest);
+    /**
+     * 多文案发送接口
+     * @param batchSendRequest
+     * @return
+     */
+    SendResponse batchSend(BatchSendRequest batchSendRequest);
+
 }
 

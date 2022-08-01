@@ -1,6 +1,6 @@
 package com.rhee.messagepush.handler.script;
 
-import com.rhee.messagepush.common.pojo.SmsParam;
+import com.rhee.messagepush.handler.domain.SmsParam;
 import com.rhee.messagepush.support.domain.SmsRecord;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.rhee.messagepush.common.pojo;
+package com.rhee.messagepush.handler.domain;
 
 
 import lombok.Builder;
