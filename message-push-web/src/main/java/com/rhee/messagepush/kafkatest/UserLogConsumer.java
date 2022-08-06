@@ -16,7 +16,7 @@ import java.util.Optional;
 public class UserLogConsumer {
 
 
-    ////            topicPartitions = @TopicPartition(topic = "quickstart",
+    //           topicPartitions = @TopicPartition(topic = "quickstart",
 //                    partitionOffsets = {
 //                            @PartitionOffset(partition = "0", initialOffset = "0")
 //                    })
