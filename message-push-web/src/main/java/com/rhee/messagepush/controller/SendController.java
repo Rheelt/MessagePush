@@ -1,14 +1,16 @@
 package com.rhee.messagepush.controller;
 
-import com.rhee.messagepush.common.pojo.TaskInfo;
-import com.rhee.messagepush.common.vo.BasicResultVO;
-import com.rhee.messagepush.handler.handler.SmsHandler;
+import com.rhee.messagepush.service.api.domain.MessageParam;
+import com.rhee.messagepush.service.api.domain.SendRequest;
+import com.rhee.messagepush.service.api.domain.SendResponse;
+import com.rhee.messagepush.service.api.enums.BusinessCode;
+import com.rhee.messagepush.service.api.service.SendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author rhee
@@ -18,29 +20,32 @@ import java.util.HashSet;
 public class SendController {
 
     @Autowired
-    private SmsHandler smsHandler;
+    private SendService sendService;
 
-    /**
-     * 测试发送短信
-     *
-     * @param phone 手机号
-     * @return BasicResultVO
-     */
-    @GetMapping("/sendSms")
-    public BasicResultVO<Void> sendSms(String phone, String content, Long messageTemplateId) {
+    @GetMapping("/sendSmsV2")
+    public SendResponse sendSmsV2(String phone) {
 
-        TaskInfo taskInfo = TaskInfo.builder().receiver(new HashSet<>(
-                        Collections.singletonList(phone)))
-                .content(content)
-                .messageTemplateId(messageTemplateId)
-                .build();
+        /**
+         *
+         * messageTemplate Id 为1 的模板内容
+         * {"auditStatus":10,"auditor":"yyyyyyz","created":1636978066,"creator":"yyyyc","deduplicationTime":1,"expectPushTime":"0","flowId":"yyyy","id":1,"idType":30,"isDeleted":0,"isNightShield":0,"msgContent":"{\"content\":\"{$contentValue}\"}","msgStatus":10,"msgType":10,"name":"test短信","proposer":"yyyy22","sendAccount":66,"sendChannel":30,"team":"yyyt","templateType":10,"updated":1636978066,"updator":"yyyyu"}
+         *
+         */
 
+        // 文案参数
+        Map<String, String> variables = new HashMap<>(8);
+        variables.put("contentValue", "6666");
 
-        if (smsHandler.doHandler(taskInfo)) {
-            return BasicResultVO.success("发送信息成功");
-        }
+        MessageParam messageParam = new MessageParam().setReceiver(phone).setVariables(variables);
 
-        return BasicResultVO.fail();
+        // ID为1的消息模板
+        SendRequest sendRequest = new SendRequest().setCode(BusinessCode.COMMON_SEND.getCode())
+                .setMessageTemplateId(1L)
+                .setMessageParam(messageParam);
+
+        SendResponse response = sendService.send(sendRequest);
+
+        return response;
     }
 
 }

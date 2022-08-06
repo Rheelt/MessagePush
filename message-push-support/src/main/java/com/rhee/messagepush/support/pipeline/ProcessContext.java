@@ -22,11 +22,13 @@ public class ProcessContext {
 
     /**
      * 标识责任链的code
+     * 通过此code来确定责任链的执行流程，参见PipelineConfig
+     * 此code和SendRequest的code是相关联，通过不同的请求调用不同的Pipeline
      */
     private String code;
 
     /**
-     * 存储责任链上下文数据的模型
+     * 责任链需要执行的数据的上下文
      */
     private ProcessModel processModel;
 

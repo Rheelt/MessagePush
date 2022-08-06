@@ -24,7 +24,7 @@ public class SendMqAction implements BusinessProcess {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
-    @Value("${austin.topic.name}")
+    @Value("${topic.name}")
     private String topicName;
 
     @Override

@@ -14,6 +14,8 @@ public class SendRequest {
 
     /**
      * 执行业务类型
+     * 必传,参考 BusinessCode枚举
+     * 表示请求类型
      */
     private String code;
 

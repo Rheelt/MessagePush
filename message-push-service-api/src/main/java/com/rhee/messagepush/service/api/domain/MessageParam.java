@@ -8,6 +8,7 @@ import java.util.Map;
 /**
  * @author rhee
  * @date 2022/7/30 4:21 PM
+ * 发送信息具体内容
  */
 @Data
 @Accessors(chain = true)

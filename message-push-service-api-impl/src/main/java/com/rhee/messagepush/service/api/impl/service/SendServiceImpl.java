@@ -17,7 +17,7 @@ import java.util.Arrays;
  * @author rhee
  * @date 2022/7/24 11:32 AM
  */
-@Service
+@Service(value = "sendService")
 public class SendServiceImpl implements SendService  {
 
     @Autowired
